@@ -1,6 +1,8 @@
 package kotlincase
 
 import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 object CaseStudy01 {
@@ -10,5 +12,12 @@ object CaseStudy01 {
         val sdf2 = SimpleDateFormat(newFormat, Locale("id","ID"))
         val date = sdf.parse(oldDate)
         return sdf2.format(date)
+    }
+
+    //Case 2: Get Time Now
+    fun getTimeNow(format: String): String {
+        val current = LocalDateTime.now()
+        val formatter = DateTimeFormatter.ofPattern(format)
+        return current.format(formatter)
     }
 }
