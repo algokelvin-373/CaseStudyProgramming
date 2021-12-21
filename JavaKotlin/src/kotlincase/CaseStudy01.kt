@@ -1,5 +1,7 @@
 package kotlincase
 
+import java.text.DecimalFormat
+import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -19,5 +21,11 @@ object CaseStudy01 {
         val current = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofPattern(format)
         return current.format(formatter)
+    }
+
+    //Case 3: Convert Currency (Rupiah - IDR)
+    fun convertCurrency(data: Double): String {
+        val formatter: NumberFormat = DecimalFormat("#,###")
+        return formatter.format(data).replace(",", ".")
     }
 }
