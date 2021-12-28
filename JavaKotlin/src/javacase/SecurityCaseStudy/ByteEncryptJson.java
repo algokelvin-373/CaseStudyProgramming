@@ -1,17 +1,13 @@
 package javacase.SecurityCaseStudy;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
 
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class ByteEncryptJson {
     public static void main(String[] args) {
-        LocalTime today = LocalTime.now();
-        String formatDate = today.format(DateTimeFormatter.ofPattern("MMddHHmmss"));
 
         // Create Map Data
         Map<Object, Object> mapData = new HashMap<>();
@@ -19,17 +15,9 @@ public class ByteEncryptJson {
         mapData.put("pin", "012345");
 
         // Create Json
-        Object data = mapToObject(mapData);
-        String json = new Gson().toJson(data);
+        JSONObject json = new JSONObject(mapData);
+        System.out.println(json);
 
-        // Encrypt data using TripleDESEncryption
-        byte[] byteEncrypt;
-
-    }
-
-    private static Object mapToObject(Map<Object, Object> map) {
-        final ObjectMapper mapper = new ObjectMapper();
-        return mapper.convertValue(map, Object.class);
     }
 
 }
