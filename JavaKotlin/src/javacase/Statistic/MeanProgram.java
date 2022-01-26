@@ -2,20 +2,23 @@ package javacase.Statistic;
 
 public class MeanProgram {
     private static int[] dataNumber;
+    private static int sum = 0;
 
     public static void main(String[] args) {
         String data = "5, 6, 3, 5, 3, 5, 4, 5, 7, 8, 5, 5";
         int[] dtNum = getDataNumber(data);
 
-        int sum = 0;
-        for (int dt: dtNum) {
-            sum += dt;
-        }
-        float mean = (float) sum / dtNum.length;
         System.out.println("Data : " + data);
         System.out.println("n    : " + dtNum.length);
-        System.out.println("Mean : " + mean);
+        System.out.println("Mean : " + mean(dtNum));
 
+    }
+
+    private static float mean(int[] dataNumber) {
+        for (int dt: dataNumber) {
+            sum += dt;
+        }
+        return (float) sum / dataNumber.length;
     }
 
     private static int[] getDataNumber(String data) {
