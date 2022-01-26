@@ -1,7 +1,7 @@
 package javacase.SecurityCaseStudy;
 
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
-import org.bouncycastle.util.encoders.Base64;
+//import org.bouncycastle.jce.provider.BouncyCastleProvider;
+//import org.bouncycastle.util.encoders.Base64;
 
 import javax.crypto.Cipher;
 import javax.crypto.NoSuchPaddingException;
@@ -15,8 +15,8 @@ import java.security.Security;
 import java.util.Arrays;
 
 public class TripleDESEncryption {
-    static {
-        Security.addProvider(new BouncyCastleProvider());
+    /*static {
+//        Security.addProvider(new BouncyCastleProvider());
     }
 
     private final Cipher cipher;
@@ -58,5 +58,5 @@ public class TripleDESEncryption {
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
-    }
+    }*/
 }
