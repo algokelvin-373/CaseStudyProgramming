@@ -1,8 +1,8 @@
 package javacase.SecurityCaseStudy;
 
 
-import com.google.gson.Gson;
-import org.json.JSONObject;
+//import com.google.gson.Gson;
+//import org.json.JSONObject;
 
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
@@ -17,8 +17,8 @@ public class ByteEncryptJson {
         mapData.put("pin", "012345");
 
         // Create Json
-        JSONObject json = new JSONObject(mapData);
-        System.out.println(json);
+//        JSONObject json = new JSONObject(mapData);
+//        System.out.println(json);
 
     }
 
