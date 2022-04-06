@@ -1,17 +1,18 @@
-package javacase.SecurityCaseStudy;
+package javacase.SecurityCaseStudy.HashMD5;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Scanner;
 
-public class HashMD5 {
+public class TestHashMD5 {
     public static void main(String[] args) {
 
         String hashtext = null;
-        Scanner input = new Scanner(System.in);
-        System.out.print("Input text: ");
-        String data = input.nextLine();
+        String a = "D1234";
+        String b = "01234567897968123456789FB05332AF";
+        String c = "abcde12345";
+        String data = a + b + c;
+        System.out.println("Data: "+data);
 
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
