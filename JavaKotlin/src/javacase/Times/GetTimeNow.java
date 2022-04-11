@@ -5,8 +5,15 @@ import java.time.format.DateTimeFormatter;
 
 public class GetTimeNow {
     public static void main(String[] args) {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        LocalDateTime now = LocalDateTime.now();
-        System.out.println("Get Time Now: "+ dtf.format(now));
+        System.out.println("Get Time Now Format 1: "+ setFormatDateTime("yyyy-MM-dd HH:mm:ss"));
+        System.out.println("Get Time Now Format 2: "+ setFormatDateTime("yyyyMMdd"));
+        System.out.println("Get Time Now Format 3: "+ setFormatDateTime("HHmmss"));
     }
+
+    public static String setFormatDateTime(String format) {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(format);
+        LocalDateTime now = LocalDateTime.now();
+        return dtf.format(now);
+    }
+
 }
