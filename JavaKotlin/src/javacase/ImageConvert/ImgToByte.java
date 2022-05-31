@@ -18,6 +18,21 @@ public class ImgToByte {
         int lengthByte = byteString.length();
         System.out.println("ByteString: "+ byteString);
         System.out.println("Length: "+ lengthByte);
+        System.out.println("\n");
+
+        String hex = byteToHex(data);
+        int lengthHex = hex.length();
+        System.out.println("HexString: "+ hex);
+        System.out.println("Length: "+ lengthHex);
+        System.out.println("\n");
     }
-    
+
+    private static String byteToHex(byte[] byteArray) {
+        String hex = "";
+        for (byte i : byteArray) {
+            hex += String.format("%02X", i);
+        }
+        return hex;
+    }
+
 }
